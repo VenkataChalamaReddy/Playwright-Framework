@@ -1,0 +1,7 @@
+✅ Registration is completed!
+✅ Logout is completed!
+✅ Login is completed!
+Execption occured while clicking 'Search':Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for locator('.fa fa-search')
+

@@ -1,0 +1,351 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: EndToEndTest.spec.ts >> execute end-to-end test flow @end-to-end
+- Location: tests\EndToEndTest.spec.ts:30:5
+
+# Error details
+
+```
+Error: locator.click: Error: strict mode violation: locator('button[type=\'button\']') resolved to 6 elements:
+    1) <button name="EUR" type="button" class="currency-select btn btn-link btn-block">€Euro</button> aka getByText('€Euro')
+    2) <button name="GBP" type="button" class="currency-select btn btn-link btn-block">£Pound Sterling</button> aka getByText('£Pound Sterling')
+    3) <button name="USD" type="button" class="currency-select btn btn-link btn-block">$US Dollar</button> aka getByText('$US Dollar')
+    4) <button type="button" class="btn btn-default btn-lg">…</button> aka getByRole('button').filter({ hasText: /^$/ })
+    5) <button type="button" data-toggle="dropdown" data-loading-text="Loading..." class="btn btn-inverse btn-block btn-lg dropdown-toggle">…</button> aka getByRole('button', { name: ' 0 item(s) - $' })
+    6) <button type="button" data-toggle="collapse" data-target=".navbar-ex1-collapse" class="btn btn-navbar navbar-toggle">…</button> aka locator('.btn.btn-navbar')
+
+Call log:
+  - waiting for locator('button[type=\'button\']')
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=f7e1]:
+  - navigation [ref=f7e2]:
+    - generic [ref=f7e3]:
+      - button "$ Currency " [ref=f7e7] [cursor=pointer]:
+        - strong [ref=f7e8]: $
+        - text: Currency
+        - generic [ref=f7e9]: 
+      - list [ref=f7e11]:
+        - listitem [ref=f7e12]:
+          - link "" [ref=f7e13] [cursor=pointer]:
+            - /url: https://tutorialsninja.com/demo/index.php?route=information/contact
+          - text: "123456789"
+        - listitem [ref=f7e15]:
+          - link " My Account" [ref=f7e16] [cursor=pointer]:
+            - /url: https://tutorialsninja.com/demo/index.php?route=account/account
+            - generic [ref=f7e17]: 
+            - text: My Account
+        - listitem [ref=f7e19]:
+          - link " Wish List (0)" [ref=f7e20] [cursor=pointer]:
+            - /url: https://tutorialsninja.com/demo/index.php?route=account/wishlist
+            - generic [ref=f7e21]: 
+            - text: Wish List (0)
+        - listitem [ref=f7e22]:
+          - link " Shopping Cart" [ref=f7e23] [cursor=pointer]:
+            - /url: https://tutorialsninja.com/demo/index.php?route=checkout/cart
+            - generic [ref=f7e24]: 
+            - text: Shopping Cart
+        - listitem [ref=f7e25]:
+          - link " Checkout" [ref=f7e26] [cursor=pointer]:
+            - /url: https://tutorialsninja.com/demo/index.php?route=checkout/checkout
+            - generic [ref=f7e27]: 
+            - text: Checkout
+  - banner [ref=f7e28]:
+    - generic [ref=f7e30]:
+      - heading [level=1] [ref=f7e33]:
+        - link "Qafox.com" [ref=f7e34] [cursor=pointer]:
+          - /url: https://tutorialsninja.com/demo/index.php?route=common/home
+      - generic [ref=f7e36]:
+        - textbox "Search" [active] [ref=f7e37]: MacBook
+        - button "" [ref=f7e39] [cursor=pointer]
+      - button " 0 item(s) - $0.00" [ref=f7e43] [cursor=pointer]:
+        - generic [ref=f7e44]: 
+        - text: 0 item(s) - $0.00
+  - navigation [ref=f7e46]:
+    - generic: 
+    - list [ref=f7e48]:
+      - listitem [ref=f7e49]:
+        - link "Desktops" [ref=f7e50] [cursor=pointer]:
+          - /url: https://tutorialsninja.com/demo/index.php?route=product/category&path=20
+      - listitem [ref=f7e51]:
+        - link "Laptops & Notebooks" [ref=f7e52] [cursor=pointer]:
+          - /url: https://tutorialsninja.com/demo/index.php?route=product/category&path=18
+      - listitem [ref=f7e53]:
+        - link "Components" [ref=f7e54] [cursor=pointer]:
+          - /url: https://tutorialsninja.com/demo/index.php?route=product/category&path=25
+      - listitem [ref=f7e55]:
+        - link "Tablets" [ref=f7e56] [cursor=pointer]:
+          - /url: https://tutorialsninja.com/demo/index.php?route=product/category&path=57
+      - listitem [ref=f7e57]:
+        - link "Software" [ref=f7e58] [cursor=pointer]:
+          - /url: https://tutorialsninja.com/demo/index.php?route=product/category&path=17
+      - listitem [ref=f7e59]:
+        - link "Phones & PDAs" [ref=f7e60] [cursor=pointer]:
+          - /url: https://tutorialsninja.com/demo/index.php?route=product/category&path=24
+      - listitem [ref=f7e61]:
+        - link "Cameras" [ref=f7e62] [cursor=pointer]:
+          - /url: https://tutorialsninja.com/demo/index.php?route=product/category&path=33
+      - listitem [ref=f7e63]:
+        - link "MP3 Players" [ref=f7e64] [cursor=pointer]:
+          - /url: https://tutorialsninja.com/demo/index.php?route=product/category&path=34
+  - generic [ref=f7e65]:
+    - list [ref=f7e66]:
+      - listitem [ref=f7e67]:
+        - link "" [ref=f7e68] [cursor=pointer]:
+          - /url: https://tutorialsninja.com/demo/index.php?route=common/home
+      - listitem [ref=f7e70]:
+        - link "Account" [ref=f7e71] [cursor=pointer]:
+          - /url: https://tutorialsninja.com/demo/index.php?route=account/account
+    - generic [ref=f7e72]:
+      - generic [ref=f7e73]:
+        - heading "My Account" [level=2] [ref=f7e74]
+        - list [ref=f7e75]:
+          - listitem [ref=f7e76]:
+            - link "Edit your account information" [ref=f7e77] [cursor=pointer]:
+              - /url: https://tutorialsninja.com/demo/index.php?route=account/edit
+          - listitem [ref=f7e78]:
+            - link "Change your password" [ref=f7e79] [cursor=pointer]:
+              - /url: https://tutorialsninja.com/demo/index.php?route=account/password
+          - listitem [ref=f7e80]:
+            - link "Modify your address book entries" [ref=f7e81] [cursor=pointer]:
+              - /url: https://tutorialsninja.com/demo/index.php?route=account/address
+          - listitem [ref=f7e82]:
+            - link "Modify your wish list" [ref=f7e83] [cursor=pointer]:
+              - /url: https://tutorialsninja.com/demo/index.php?route=account/wishlist
+        - heading "My Orders" [level=2] [ref=f7e84]
+        - list [ref=f7e85]:
+          - listitem [ref=f7e86]:
+            - link "View your order history" [ref=f7e87] [cursor=pointer]:
+              - /url: https://tutorialsninja.com/demo/index.php?route=account/order
+          - listitem [ref=f7e88]:
+            - link "Downloads" [ref=f7e89] [cursor=pointer]:
+              - /url: https://tutorialsninja.com/demo/index.php?route=account/download
+          - listitem [ref=f7e90]:
+            - link "Your Reward Points" [ref=f7e91] [cursor=pointer]:
+              - /url: https://tutorialsninja.com/demo/index.php?route=account/reward
+          - listitem [ref=f7e92]:
+            - link "View your return requests" [ref=f7e93] [cursor=pointer]:
+              - /url: https://tutorialsninja.com/demo/index.php?route=account/return
+          - listitem [ref=f7e94]:
+            - link "Your Transactions" [ref=f7e95] [cursor=pointer]:
+              - /url: https://tutorialsninja.com/demo/index.php?route=account/transaction
+          - listitem [ref=f7e96]:
+            - link "Recurring payments" [ref=f7e97] [cursor=pointer]:
+              - /url: https://tutorialsninja.com/demo/index.php?route=account/recurring
+        - heading "My Affiliate Account" [level=2] [ref=f7e98]
+        - list [ref=f7e99]:
+          - listitem [ref=f7e100]:
+            - link "Register for an affiliate account" [ref=f7e101] [cursor=pointer]:
+              - /url: https://tutorialsninja.com/demo/index.php?route=account/affiliate/add
+        - heading "Newsletter" [level=2] [ref=f7e102]
+        - list [ref=f7e103]:
+          - listitem [ref=f7e104]:
+            - link "Subscribe / unsubscribe to newsletter" [ref=f7e105] [cursor=pointer]:
+              - /url: https://tutorialsninja.com/demo/index.php?route=account/newsletter
+      - complementary [ref=f7e106]:
+        - generic [ref=f7e107]:
+          - link "My Account" [ref=f7e108] [cursor=pointer]:
+            - /url: https://tutorialsninja.com/demo/index.php?route=account/account
+          - link "Edit Account" [ref=f7e109] [cursor=pointer]:
+            - /url: https://tutorialsninja.com/demo/index.php?route=account/edit
+          - link "Password" [ref=f7e110] [cursor=pointer]:
+            - /url: https://tutorialsninja.com/demo/index.php?route=account/password
+          - link "Address Book" [ref=f7e111] [cursor=pointer]:
+            - /url: https://tutorialsninja.com/demo/index.php?route=account/address
+          - link "Wish List" [ref=f7e112] [cursor=pointer]:
+            - /url: https://tutorialsninja.com/demo/index.php?route=account/wishlist
+          - link "Order History" [ref=f7e113] [cursor=pointer]:
+            - /url: https://tutorialsninja.com/demo/index.php?route=account/order
+          - link "Downloads" [ref=f7e114] [cursor=pointer]:
+            - /url: https://tutorialsninja.com/demo/index.php?route=account/download
+          - link "Recurring payments" [ref=f7e115] [cursor=pointer]:
+            - /url: https://tutorialsninja.com/demo/index.php?route=account/recurring
+          - link "Reward Points" [ref=f7e116] [cursor=pointer]:
+            - /url: https://tutorialsninja.com/demo/index.php?route=account/reward
+          - link "Returns" [ref=f7e117] [cursor=pointer]:
+            - /url: https://tutorialsninja.com/demo/index.php?route=account/return
+          - link "Transactions" [ref=f7e118] [cursor=pointer]:
+            - /url: https://tutorialsninja.com/demo/index.php?route=account/transaction
+          - link "Newsletter" [ref=f7e119] [cursor=pointer]:
+            - /url: https://tutorialsninja.com/demo/index.php?route=account/newsletter
+          - link "Logout" [ref=f7e120] [cursor=pointer]:
+            - /url: https://tutorialsninja.com/demo/index.php?route=account/logout
+  - contentinfo [ref=f7e121]:
+    - generic [ref=f7e122]:
+      - generic [ref=f7e123]:
+        - generic [ref=f7e124]:
+          - heading "Information" [level=5] [ref=f7e125]
+          - list [ref=f7e126]:
+            - listitem [ref=f7e127]:
+              - link "About Us" [ref=f7e128] [cursor=pointer]:
+                - /url: https://tutorialsninja.com/demo/index.php?route=information/information&information_id=4
+            - listitem [ref=f7e129]:
+              - link "Delivery Information" [ref=f7e130] [cursor=pointer]:
+                - /url: https://tutorialsninja.com/demo/index.php?route=information/information&information_id=6
+            - listitem [ref=f7e131]:
+              - link "Privacy Policy" [ref=f7e132] [cursor=pointer]:
+                - /url: https://tutorialsninja.com/demo/index.php?route=information/information&information_id=3
+            - listitem [ref=f7e133]:
+              - link "Terms & Conditions" [ref=f7e134] [cursor=pointer]:
+                - /url: https://tutorialsninja.com/demo/index.php?route=information/information&information_id=5
+        - generic [ref=f7e135]:
+          - heading "Customer Service" [level=5] [ref=f7e136]
+          - list [ref=f7e137]:
+            - listitem [ref=f7e138]:
+              - link "Contact Us" [ref=f7e139] [cursor=pointer]:
+                - /url: https://tutorialsninja.com/demo/index.php?route=information/contact
+            - listitem [ref=f7e140]:
+              - link "Returns" [ref=f7e141] [cursor=pointer]:
+                - /url: https://tutorialsninja.com/demo/index.php?route=account/return/add
+            - listitem [ref=f7e142]:
+              - link "Site Map" [ref=f7e143] [cursor=pointer]:
+                - /url: https://tutorialsninja.com/demo/index.php?route=information/sitemap
+        - generic [ref=f7e144]:
+          - heading "Extras" [level=5] [ref=f7e145]
+          - list [ref=f7e146]:
+            - listitem [ref=f7e147]:
+              - link "Brands" [ref=f7e148] [cursor=pointer]:
+                - /url: https://tutorialsninja.com/demo/index.php?route=product/manufacturer
+            - listitem [ref=f7e149]:
+              - link "Gift Certificates" [ref=f7e150] [cursor=pointer]:
+                - /url: https://tutorialsninja.com/demo/index.php?route=account/voucher
+            - listitem [ref=f7e151]:
+              - link "Affiliate" [ref=f7e152] [cursor=pointer]:
+                - /url: https://tutorialsninja.com/demo/index.php?route=affiliate/login
+            - listitem [ref=f7e153]:
+              - link "Specials" [ref=f7e154] [cursor=pointer]:
+                - /url: https://tutorialsninja.com/demo/index.php?route=product/special
+        - generic [ref=f7e155]:
+          - heading "My Account" [level=5] [ref=f7e156]
+          - list [ref=f7e157]:
+            - listitem [ref=f7e158]:
+              - link "My Account" [ref=f7e159] [cursor=pointer]:
+                - /url: https://tutorialsninja.com/demo/index.php?route=account/account
+            - listitem [ref=f7e160]:
+              - link "Order History" [ref=f7e161] [cursor=pointer]:
+                - /url: https://tutorialsninja.com/demo/index.php?route=account/order
+            - listitem [ref=f7e162]:
+              - link "Wish List" [ref=f7e163] [cursor=pointer]:
+                - /url: https://tutorialsninja.com/demo/index.php?route=account/wishlist
+            - listitem [ref=f7e164]:
+              - link "Newsletter" [ref=f7e165] [cursor=pointer]:
+                - /url: https://tutorialsninja.com/demo/index.php?route=account/newsletter
+      - separator [ref=f7e166]
+      - paragraph [ref=f7e167]:
+        - text: Powered By
+        - link "OpenCart" [ref=f7e168] [cursor=pointer]:
+          - /url: http://www.opencart.com
+        - text: Qafox.com © 2026
+```
+
+# Test source
+
+```ts
+  1  | import {Page,expect,Locator} from '@playwright/test';
+  2  | 
+  3  | 
+  4  | export class HomePage{
+  5  |     //locators
+  6  |     private readonly page:Page;
+  7  | 
+  8  |     private readonly linkMyAccount : Locator;
+  9  |     private readonly linkRegister : Locator;
+  10 |     private readonly linkLogin : Locator;
+  11 |     private readonly txtSearch : Locator;
+  12 |     private readonly btnSearch : Locator;
+  13 | 
+  14 | 
+  15 |     //constructor
+  16 |     constructor (page:Page){
+  17 |         this.page=page;
+  18 |         this.linkMyAccount = page.locator('span:has-text("My Account")')
+  19 |         this.linkRegister = page.locator('a:has-text("Register")')
+  20 |         this.linkLogin = page.locator('a:has-text("Login")')
+  21 |         this.txtSearch = page.locator("input[placeholder='Search']")
+  22 |         this.btnSearch = page.locator("button[type='button']")
+  23 |     }
+  24 | 
+  25 | 
+  26 | 
+  27 |     //action methods
+  28 |     async isHomePageExists(){
+  29 |         let title:string=await this.page.title()
+  30 | 
+  31 |         if(title){
+  32 |             return true;
+  33 |         }
+  34 |         return false;
+  35 |     }
+  36 | 
+  37 |         //click "My Account" link
+  38 | 
+  39 |         async clickMyAccount(){
+  40 | 
+  41 |             try {
+  42 |                 await this.linkMyAccount.click();
+  43 |             } catch (error) {
+  44 |                 console.log(`Exception occured while clicking 'My Account': ${error}`)
+  45 |                 throw error;
+  46 |             }
+  47 |         }
+  48 | 
+  49 |     async clickRegister(){
+  50 |         try{
+  51 |             await this.linkRegister.click();
+  52 |         } catch(error) {
+  53 |             console.log(`Exception occured while clicking 'Register':${error}`)
+  54 |             throw error
+  55 |         }
+  56 |     }
+  57 | 
+  58 |     async clickLogin(){
+  59 |         try{
+  60 |             await this.linkLogin.click();
+  61 |         }catch(error){
+  62 |             console.log(`Execption occured while clicking 'Login':${error}`)
+  63 |             throw error
+  64 | 
+  65 |         }
+  66 |     }
+  67 | 
+  68 | 
+  69 |      async enterProductName(pName:string){
+  70 |         try{
+  71 |             await this.txtSearch.fill(pName);
+  72 |         }catch(error){
+  73 |             console.log(`Execption occured while entering 'Prodcut Name':${error}`)
+  74 |             throw error
+  75 | 
+  76 |         }
+  77 |     }
+  78 | 
+  79 | 
+  80 |        async clickSearch(){
+  81 |         try{
+> 82 |             await this.btnSearch.click();
+     |                                  ^ Error: locator.click: Error: strict mode violation: locator('button[type=\'button\']') resolved to 6 elements:
+  83 |         }catch(error){
+  84 |             console.log(`Execption occured while clicking 'Search':${error}`)
+  85 |             throw error
+  86 | 
+  87 |         }
+  88 |     }
+  89 | }
+  90 | 
+  91 | 
+  92 | 
+  93 | 
+  94 | 
+  95 | 
+  96 | 
+```
