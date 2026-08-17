@@ -1,1 +1,3 @@
 //this is test file to get from git to our local system
+// data is added to the file after pulling it from git remote repositor using git pull origin master command
+//now need to push it bavck to remote repository using "git add fetchfromgittest.txt" command
